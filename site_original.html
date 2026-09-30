@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Velvet Brew Café - Coffee, pastries and good moments."
+    >
+
+    <title>Velvet Brew Café</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        VELVET <span>BREW</span>
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#menu">Menu</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#reviews">Reviews</a>
+        </li>
+
+    </ul>
+
+    <button
+        class="cart-button"
+        id="openCartButton"
+        type="button"
+    >
+
+        🛒
+
+        <span>Cart</span>
+
+        <strong id="cartCount">0</strong>
+
+    </button>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            WELCOME TO VELVET BREW
+        </div>
+
+        <h1>
+            Good Coffee.
+            <br>
+            Good Moments.
+        </h1>
+
+        <p>
+            Handcrafted coffee, delicious pastries,
+            and beautiful moments — all served
+            in one cozy place.
+        </p>
+
+        <div class="hero-actions">
+
+            <a
+                href="#menu"
+                class="primary-button"
+            >
+                Explore Menu
+                <span>→</span>
+            </a>
+
+            <a
+                href="#about"
+                class="secondary-button"
+            >
+                Our Story
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MENU
+========================================================= -->
+
+<section class="menu-section" id="menu">
+
+    <div class="section-heading">
+
+        <span>OUR MENU</span>
+
+        <h2>
+            Made With Love
+        </h2>
+
+        <p>
+            Choose your favorite drink or treat.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="menu-tools">
+
+        <div class="search-box">
+
+            <span>⌕</span>
+
+            <input
+                type="search"
+                id="menuSearch"
+                placeholder="Search coffee, pastries..."
+            >
+
+        </div>
+
+        <div
+            class="category-buttons"
+            id="categoryButtons"
+        >
+
+            <button
+                class="category-button active"
+                data-category="all"
+                type="button"
+            >
+                All
+            </button>
+
+            <button
+                class="category-button"
+                data-category="coffee"
+                type="button"
+            >
+                Coffee
+            </button>
+
+            <button
+                class="category-button"
+                data-category="noncoffee"
+                type="button"
+            >
+                Non-Coffee
+            </button>
+
+            <button
+                class="category-button"
+                data-category="pastry"
+                type="button"
+            >
+                Pastries
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <div
+        class="menu-grid"
+        id="menuGrid"
+    >
+
+        <div class="loading">
+            Loading our menu...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    class="about-section"
+    id="about"
+>
+
+    <div class="about-image-wrapper">
+
+        <img
+            src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85"
+            alt="Cozy Velvet Brew coffee shop"
+        >
+
+        <div class="about-badge">
+
+            <strong>2019</strong>
+
+            <span>Since</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <span class="eyebrow dark">
+            OUR STORY
+        </span>
+
+        <h2>
+            A Little Place
+            <br>
+            With A Big Heart.
+        </h2>
+
+        <p>
+            Velvet Brew was created for people who love
+            great coffee, relaxing conversations and
+            unforgettable moments.
+        </p>
+
+        <p>
+            From carefully selected coffee beans to
+            freshly baked pastries, everything is
+            prepared with passion.
+        </p>
+
+        <p>
+            Come in, take a seat, and make yourself
+            at home.
+        </p>
+
+        <div class="about-stats">
+
+            <div>
+                <strong>9+</strong>
+                <span>Menu Items</span>
+            </div>
+
+            <div>
+                <strong>5★</strong>
+                <span>Customer Love</span>
+            </div>
+
+            <div>
+                <strong>7</strong>
+                <span>Days Open</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
+
+<section
+    class="reviews-section"
+    id="reviews"
+>
+
+    <div class="section-heading">
+
+        <span>CUSTOMER REVIEWS</span>
+
+        <h2>
+            What People Say
+        </h2>
+
+        <p>
+            Real thoughts from our Velvet Brew community.
+        </p>
+
+    </div>
+
+
+    <!-- RATING SUMMARY -->
+
+    <div class="rating-summary">
+
+        <div class="rating-score">
+
+            <strong id="averageRating">
+                0.0
+            </strong>
+
+            <div
+                class="rating-stars"
+                id="averageStars"
+            >
+                ☆☆☆☆☆
+            </div>
+
+            <span>
+                <strong id="reviewCount">0</strong>
+                customer reviews
+            </span>
+
+        </div>
+
+
+        <div
+            class="rating-bars"
+            id="ratingBars"
+        >
+
+            <!-- JavaScript fills these -->
+
+        </div>
+
+    </div>
+
+
+    <!-- REVIEW CARDS -->
+
+    <div
+        class="reviews-grid"
+        id="reviewsList"
+    >
+
+        <div class="loading">
+            Loading reviews...
+        </div>
+
+    </div>
+
+
+    <!-- REVIEW FORM -->
+
+    <div class="review-box">
+
+        <div class="review-box-heading">
+
+            <span class="eyebrow dark">
+                SHARE YOUR EXPERIENCE
+            </span>
+
+            <h3>
+                Leave a Review
+            </h3>
+
+            <p>
+                Tell us about your coffee experience.
+            </p>
+
+        </div>
+
+
+        <form id="reviewForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="reviewName">
+                        Your Name
+                    </label>
+
+                    <input
+                        id="reviewName"
+                        name="name"
+                        type="text"
+                        maxlength="80"
+                        placeholder="Maria Santos"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Your Rating
+                    </label>
+
+                    <div
+                        class="star-picker"
+                        id="starPicker"
+                    >
+
+                        <button
+                            type="button"
+                            data-rating="1"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="2"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="3"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="4"
+                        >
+                            ★
+                        </button>
+
+                        <button
+                            type="button"
+                            data-rating="5"
+                        >
+                            ★
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="reviewComment">
+                    Your Comment
+                </label>
+
+                <textarea
+                    id="reviewComment"
+                    name="comment"
+                    maxlength="1000"
+                    placeholder="Tell us what you loved..."
+                    required
+                ></textarea>
+
+                <small class="character-count">
+                    <span id="characterCount">0</span>/1000
+                </small>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+                Post Review
+                <span>→</span>
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CART DRAWER
+========================================================= -->
+
+<div
+    class="cart-backdrop"
+    id="cartBackdrop"
+></div>
+
+
+<aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-hidden="true"
+>
+
+    <div class="cart-header">
+
+        <div>
+
+            <span class="eyebrow dark">
+                YOUR ORDER
+            </span>
+
+            <h2>
+                Shopping Cart
+            </h2>
+
+        </div>
+
+        <button
+            class="close-button"
+            id="closeCartButton"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    >
+
+        <div class="empty-cart">
+
+            <div class="empty-cart-icon">
+                🛒
+            </div>
+
+            <h3>
+                Your cart is empty
+            </h3>
+
+            <p>
+                Add something delicious from our menu.
+            </p>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="browseMenuButton"
+            >
+                Browse Menu
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-line">
+
+            <span>Subtotal</span>
+
+            <strong id="cartSubtotal">
+                ₱0
+            </strong>
+
+        </div>
+
+        <div class="cart-line small">
+
+            <span>Service</span>
+
+            <span>
+                Free
+            </span>
+
+        </div>
+
+        <div class="cart-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="cartTotal">
+                ₱0
+            </strong>
+
+        </div>
+
+        <button
+            class="checkout-button"
+            id="checkoutButton"
+            type="button"
+        >
+            Review & Checkout
+            <span>→</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     CHECKOUT MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="checkoutModal"
+>
+
+    <div class="checkout-modal">
+
+        <button
+            class="modal-close"
+            id="closeCheckout"
+            type="button"
+        >
+            ×
+        </button>
+
+        <span class="eyebrow dark">
+            FINAL STEP
+        </span>
+
+        <h2>
+            Review Your Order
+        </h2>
+
+        <p class="modal-subtitle">
+            Make sure everything looks right.
+        </p>
+
+
+        <div
+            class="checkout-items"
+            id="checkoutItems"
+        ></div>
+
+
+        <div class="checkout-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="checkoutTotal">
+                ₱0
+            </strong>
+
+        </div>
+
+
+        <form id="checkoutForm">
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Your Name
+                </label>
+
+                <input
+                    id="customerName"
+                    required
+                    maxlength="80"
+                    placeholder="Your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerPhone">
+                    Phone Number
+                </label>
+
+                <input
+                    id="customerPhone"
+                    maxlength="30"
+                    placeholder="Optional"
+                >
+
+            </div>
+
+
+            <button
+                class="checkout-button"
+                type="submit"
+            >
+                Place Order
+                <span>✓</span>
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+    role="status"
+>
+    Added to cart!
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        VELVET <span>BREW</span>
+    </div>
+
+    <p>
+        Coffee • Pastries • Good Moments
+    </p>
+
+    <div class="footer-line"></div>
+
+    <small>
+        © 2026 Velvet Brew Café.
+        All rights reserved.
+    </small>
+
+</footer>
+
+
+<script
+    src="{{ url_for('static', filename='js/app.js') }}"
+></script>
+
+</body>
+
+</html>
